@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import clsx from "clsx";
 import styles from "./Header.module.css";
 
@@ -21,9 +22,16 @@ export function Header() {
       <div className={clsx(styles.header, mobileMenuOpen && styles.mobileMenuOpen)}>
         <Link href="/" className={styles.brand}>
           <span className={styles.brandMark} aria-hidden="true">
-            LL
+            <Image
+              src="/images/tmped_o56ja.webp"
+              alt="Lux Legacy logo"
+              width={44}
+              height={44}
+              className={styles.brandLogo}
+              priority
+            />
           </span>
-          <span>Lux Legacy Agency</span>
+          <span className={styles.brandText}>Lux Legacy Agency</span>
         </Link>
 
         <nav className={styles.nav} aria-label="Primary navigation">
@@ -50,14 +58,14 @@ export function Header() {
           </div>
         </button>
 
-        <a
+        <Link
           className={styles.headerCta}
-          href="#book"
+          href="/book"
           aria-label="Book a project consultation"
         >
           Book Now
           <span aria-hidden="true">↗</span>
-        </a>
+        </Link>
       </div>
 
       <nav
@@ -74,6 +82,14 @@ export function Header() {
             {item.label}
           </a>
         ))}
+        <Link
+          href="/book"
+          className={styles.mobileNavCta}
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Book Now
+          <span aria-hidden="true">↗</span>
+        </Link>
       </nav>
     </header>
   );

@@ -37,6 +37,12 @@
   background: radial-gradient(circle at 35% 35%, rgba(230, 178, 104, 0.75) 0%, rgba(230, 178, 104, 0.18) 65%, rgba(230, 178, 104, 0.05) 100%);
   border: 1px solid rgba(230, 178, 104, 0.5);
   box-shadow: 0 16px 38px rgba(230, 178, 104, 0.18);
+  overflow: hidden;
+}
+
+.brandLogo {
+  border-radius: 18px;
+  object-fit: cover;
 }
 
 .brandName {
@@ -140,6 +146,36 @@
   gap: 1.5rem;
   padding-top: 1.75rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: rgba(178, 184, 197, 0.78);
+}
+
+.flags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flag {
+  font-size: 1.25rem;
+  line-height: 1;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.flag:hover {
+  transform: scale(1.15);
+  opacity: 1;
 }
 
 .bottomLinks {

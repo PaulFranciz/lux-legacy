@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 
 const linkGroups = [
@@ -40,7 +41,13 @@ export function Footer() {
         <div className={styles.topRow}>
           <div className={styles.brandBlock}>
             <div className={styles.brandMark} aria-hidden="true">
-              LL
+              <Image
+                src="/images/tmped_o56ja.webp"
+                alt="Lux Legacy logo"
+                width={48}
+                height={48}
+                className={styles.brandLogo}
+              />
             </div>
             <div>
               <div className={styles.brandName}>Lux Legacy Agency</div>
@@ -78,15 +85,22 @@ export function Footer() {
             <p className={styles.ctaCopy}>
               Send us a note with where you&apos;re headed and we&apos;ll help chart the roadmap.
             </p>
-            <a className={styles.ctaButton} href="mailto:hello@luxlegacy.agency">
+            <Link className={styles.ctaButton} href="/book">
               Book a consult
               <span aria-hidden="true">↗</span>
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className={styles.bottomRow}>
-          <span className={styles.copyright}>© {currentYear} Lux Legacy Agency. All rights reserved.</span>
+          <div className={styles.leftGroup}>
+            <span className={styles.copyright}>© {currentYear} Lux Legacy Agency. All rights reserved.</span>
+            <div className={styles.flags}>
+              <span className={styles.flag}>🇳🇬</span>
+              <span className={styles.flag}>🇺🇸</span>
+              <span className={styles.flag}>🇨🇦</span>
+            </div>
+          </div>
           <div className={styles.bottomLinks}>
             <a href="#privacy" className={styles.bottomLink}>
               Privacy

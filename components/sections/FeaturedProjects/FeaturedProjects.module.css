@@ -1,22 +1,22 @@
 .section {
   width: 100%;
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 
 .inner {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.25rem;
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
   text-align: center;
   align-items: center;
 }
@@ -29,7 +29,7 @@
 }
 
 .heading {
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
   font-weight: 400;
   color: rgba(239, 241, 245, 0.9);
   letter-spacing: 0.02em;
@@ -47,22 +47,40 @@
   color: rgba(166, 171, 186, 0.85);
 }
 
+/* Header tags (filter) */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.tag {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(11, 14, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(201, 206, 220, 0.95);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
 
 .grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
   position: relative;
   display: block;
-  border-radius: 28px;
+  border-radius: 22px;
   overflow: hidden;
   background: rgba(8, 10, 16, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  min-height: 480px;
+  min-height: 420px;
 }
 
 .card:hover {
@@ -92,7 +110,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1.5rem;
   background: linear-gradient(180deg, rgba(5, 6, 9, 0) 50%, rgba(5, 6, 9, 0.88) 100%);
   z-index: 2;
 }
@@ -104,14 +122,14 @@
 }
 
 .category {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(166, 171, 186, 0.75);
 }
 
 .title {
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: rgba(239, 241, 245, 0.95);
 }
@@ -121,7 +139,7 @@
   align-items: center;
   gap: 0.5rem;
   align-self: flex-start;
-  padding: 0.75rem 1.6rem;
+  padding: 0.65rem 1.3rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(239, 241, 245, 0.9);
@@ -167,7 +185,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
   }
 
   .grid {
@@ -175,34 +193,34 @@
   }
 
   .card {
-    border-radius: 24px;
-    min-height: 420px;
-  }
-
-  .overlay {
-    padding: 1.5rem;
-  }
-
-  .title {
-    font-size: 1.35rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section {
-    padding: 3.5rem 0;
-  }
-
-  .heading {
-    font-size: clamp(2.1rem, 8vw, 2.7rem);
-  }
-
-  .card {
+    border-radius: 20px;
     min-height: 380px;
   }
 
   .overlay {
     padding: 1.25rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .heading {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  }
+
+  .card {
+    min-height: 340px;
+  }
+
+  .overlay {
+    padding: 1rem;
   }
 
   .cta {
