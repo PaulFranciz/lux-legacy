@@ -1,5 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Hero } from "@/components/sections/Hero";
+import { LogoCarousel } from "@/components/sections/LogoCarousel";
+import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -8,6 +10,8 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <Hero />
+        <LogoCarousel />
+        <FeaturedProjects />
       </main>
     </div>
   );

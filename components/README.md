@@ -13,9 +13,13 @@ components/
 │       └── index.ts
 │
 └── sections/        # Page sections (Hero, Features, etc.)
-    └── Hero/        # Hero section with headline and CTA
-        ├── Hero.tsx
-        ├── Hero.module.css
+    ├── Hero/        # Hero section with headline and CTA
+    │   ├── Hero.tsx
+    │   ├── Hero.module.css
+    │   └── index.ts
+    └── LogoCarousel/ # Infinite scrolling partner logos
+        ├── LogoCarousel.tsx
+        ├── LogoCarousel.module.css
         └── index.ts
 ```
 
@@ -60,3 +64,11 @@ Landing hero section with:
 - Descriptive copy
 - Capability pills
 - Primary CTA button
+- Character-by-character scale-in animation
+
+#### LogoCarousel
+Infinite scrolling partner logos with:
+- Smooth continuous animation
+- Hover effects on individual logos
+- Gradient fade on edges
+- Responsive sizing

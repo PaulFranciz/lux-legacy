@@ -1,0 +1,124 @@
+.section {
+  width: 100%;
+  padding: 3rem 0 2rem;
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.carouselWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.carouselWrapper::before,
+.carouselWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.carouselWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(5, 6, 9, 1), rgba(5, 6, 9, 0));
+}
+
+.carouselWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(5, 6, 9, 1), rgba(5, 6, 9, 0));
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 60px;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+
+.logoItem:hover {
+  opacity: 1;
+}
+
+.logoText {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: rgba(239, 241, 245, 0.82);
+  font-family: var(--font-sans, system-ui, sans-serif);
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2.5rem 0 1.75rem;
+  }
+
+  .container {
+    max-width: 640px;
+  }
+
+  .carousel {
+    gap: 2.25rem;
+  }
+
+  .carouselWrapper::before,
+  .carouselWrapper::after {
+    width: 110px;
+  }
+
+  .logoItem {
+    min-width: 130px;
+  }
+
+  .logoText {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .container {
+    max-width: 420px;
+  }
+
+  .carousel {
+    gap: 1.75rem;
+  }
+
+  .carouselWrapper::before,
+  .carouselWrapper::after {
+    width: 90px;
+  }
+
+  .logoItem {
+    min-width: 110px;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+}
