@@ -1,0 +1,203 @@
+.footer {
+  background: #030406;
+  color: rgba(235, 237, 244, 0.86);
+  padding: 3.25rem 1.75rem 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr minmax(0, 280px);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.brandBlock {
+  display: flex;
+  gap: 1.35rem;
+}
+
+.brandMark {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #050609;
+  background: radial-gradient(circle at 35% 35%, rgba(230, 178, 104, 0.75) 0%, rgba(230, 178, 104, 0.18) 65%, rgba(230, 178, 104, 0.05) 100%);
+  border: 1px solid rgba(230, 178, 104, 0.5);
+  box-shadow: 0 16px 38px rgba(230, 178, 104, 0.18);
+}
+
+.brandName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(191, 196, 210, 0.8);
+  max-width: 30ch;
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 160px));
+  gap: 1.25rem 2.5rem;
+}
+
+.linkColumn ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.linkTitle {
+  font-size: 0.85rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(154, 160, 176, 0.72);
+  margin-bottom: 1rem;
+}
+
+.link {
+  font-size: 0.95rem;
+  color: rgba(221, 225, 233, 0.86);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.ctaBlock {
+  background: linear-gradient(180deg, rgba(11, 12, 18, 0.85), rgba(8, 9, 13, 0.92));
+  border-radius: 22px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.ctaLabel {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(154, 160, 176, 0.75);
+}
+
+.ctaCopy {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(214, 220, 233, 0.82);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  align-self: flex-start;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  background: #e6b268;
+  color: #050609;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 28px rgba(230, 178, 104, 0.22);
+}
+
+.ctaButton:hover,
+.ctaButton:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(230, 178, 104, 0.28);
+}
+
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bottomLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.bottomLink {
+  font-size: 0.85rem;
+  color: rgba(178, 184, 197, 0.78);
+  transition: color 0.2s ease;
+}
+
+.bottomLink:hover,
+.bottomLink:focus-visible {
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .topRow {
+    grid-template-columns: 1fr;
+  }
+
+  .linkGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ctaBlock {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2.75rem 1.5rem 2rem;
+  }
+
+  .container {
+    gap: 2.5rem;
+  }
+
+  .linkGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .linkGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .brandBlock {
+    flex-direction: column;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

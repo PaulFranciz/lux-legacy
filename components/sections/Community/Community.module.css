@@ -1,0 +1,225 @@
+.section {
+  position: relative;
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  background: #ece2d6;
+  color: #1f232c;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  border-radius: 38px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow:
+    0 38px 65px rgba(12, 13, 18, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.cardInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  padding: clamp(2.5rem, 4vw, 3.5rem) clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.cardHalo {
+  position: absolute;
+  inset: -35% -30% auto -30%;
+  height: 70%;
+  background: radial-gradient(70% 70% at 45% 12%, rgba(230, 178, 104, 0.28) 0%, rgba(230, 178, 104, 0) 62%),
+    radial-gradient(90% 90% at 80% 0%, rgba(116, 161, 255, 0.2) 0%, rgba(116, 161, 255, 0) 65%);
+  filter: blur(30px);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.cardContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.75rem;
+  text-align: left;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(46, 50, 62, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(198, 204, 217, 0.85);
+}
+
+.heading {
+  font-size: clamp(2.2rem, 4.25vw, 3.5rem);
+  font-weight: 500;
+  color: rgba(236, 238, 244, 0.97);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.heading span {
+  color: #e6b268;
+}
+
+.description {
+  max-width: 52ch;
+  color: rgba(162, 170, 187, 0.92);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.form {
+  width: 100%;
+  max-width: 480px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(24, 27, 36, 0.88), rgba(14, 16, 22, 0.88));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.input {
+  width: 100%;
+  background: rgba(11, 13, 20, 0.65);
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  color: rgba(214, 220, 233, 0.92);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.input::placeholder {
+  color: rgba(113, 123, 142, 0.7);
+}
+
+.input:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(230, 178, 104, 0.35);
+}
+
+.cta {
+  position: relative;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  cursor: pointer;
+  color: #050609;
+  background: #e6b268;
+  box-shadow: 0 8px 20px rgba(230, 178, 104, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(230, 178, 104, 0.24);
+}
+
+.cta:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(230, 178, 104, 0.16);
+}
+
+.helperText {
+  font-size: 0.85rem;
+  color: rgba(130, 139, 158, 0.8);
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageFrame {
+  position: relative;
+  width: clamp(320px, 35vw, 480px);
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.imageFrame :global(img) {
+  object-fit: cover;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4.5rem 1.25rem;
+  }
+
+  .card {
+    border-radius: 32px;
+  }
+
+  .cardInner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .cardContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .imageFrame {
+    width: clamp(240px, 70vw, 320px);
+  }
+}
+
+@media (max-width: 480px) {
+  .description {
+    font-size: 0.95rem;
+  }
+}

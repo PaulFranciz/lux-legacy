@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import clsx from "clsx";
 import styles from "./Header.module.css";
 
 const navigationItems = [
@@ -10,9 +14,11 @@ const navigationItems = [
 ] as const;
 
 export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className={styles.headerShell}>
-      <div className={styles.header}>
+      <div className={clsx(styles.header, mobileMenuOpen && styles.mobileMenuOpen)}>
         <Link href="/" className={styles.brand}>
           <span className={styles.brandMark} aria-hidden="true">
             LL
@@ -32,6 +38,18 @@ export function Header() {
           ))}
         </nav>
 
+        <button
+          className={styles.mobileMenuToggle}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+          aria-expanded={mobileMenuOpen}
+        >
+          <div className={styles.burger}>
+            <span className={styles.burgerLine} />
+            <span className={styles.burgerLine} />
+          </div>
+        </button>
+
         <a
           className={styles.headerCta}
           href="#book"
@@ -41,6 +59,22 @@ export function Header() {
           <span aria-hidden="true">↗</span>
         </a>
       </div>
+
+      <nav
+        className={clsx(styles.mobileNav, mobileMenuOpen && styles.mobileNavOpen)}
+        aria-label="Mobile navigation"
+      >
+        {navigationItems.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            className={styles.mobileNavLink}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 }
