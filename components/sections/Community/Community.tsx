@@ -40,7 +40,7 @@ export function CommunitySection() {
             <div className={styles.imageWrapper}>
               <div className={styles.imageFrame}>
                 <Image
-                  src="/images/420shots_so.webp"
+                  src="https://res.cloudinary.com/dzrnkgvts/image/upload/v1762347188/420shots_so_u8zfa8.webp"
                   alt="Lux Legacy community collaboration"
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
